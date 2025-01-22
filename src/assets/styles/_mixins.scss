@@ -1,0 +1,29 @@
+@mixin space-y($spacing) {
+  & > * {
+    margin-bottom: $spacing;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin responsive-width {
+  width: 100vw;
+
+  @media (min-width: 768px) {
+    width: 75vw;
+  }
+
+  @media (min-width: 1200px) {
+    width: 75vw;
+  }
+
+  @media (min-width: 1400px) {
+    width: 70vw;
+  }
+
+  @media (min-width: 1600px) {
+    width: 65vw;
+  }
+}

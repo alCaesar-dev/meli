@@ -1,0 +1,11 @@
+@use "../../assets/styles/variables" as *;
+
+.button {
+  background-color: $blue;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+}

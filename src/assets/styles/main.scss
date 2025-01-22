@@ -1,0 +1,35 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+body {
+  background-color: $gray-light;
+  color: $black;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+}
+
+.space-y-8 {
+  & > * {
+    margin-bottom: 2rem;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}

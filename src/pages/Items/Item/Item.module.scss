@@ -1,0 +1,77 @@
+@use "../../../assets/styles/mixins" as *;
+@use "../../../assets/styles/variables" as *;
+
+.section {
+  padding: 2rem;
+}
+
+.headContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+
+  .imageContainer {
+    max-width: 42.5rem;
+    width: 100%;
+
+    .image {
+      width: 100%;
+      border-radius: 4px;
+      height: 20rem;
+      object-fit: contain;
+
+      @media(min-width: 1400px) {
+        height: 30rem;
+      }
+
+    }
+
+    .descriptionContainer {
+      padding-top: 2rem;
+      text-wrap: wrap;
+      @include space-y(2rem);
+
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+
+      .description {
+        color: $gray;
+        font-size: 1rem;
+        white-space: pre-line;
+      }
+
+      .descriptionTitle {
+        font-size: 1.75rem;
+      }
+    }
+  }
+
+  .itemDetail {
+    @include space-y(2rem);
+
+    .name {
+      font-size: 1.5rem;
+      text-wrap: wrap;
+      font-weight: 600;
+    }
+
+    .new {
+      font-size: 14px;
+      margin-bottom: 1rem;
+    }
+
+    .amount {
+      font-size: 46px;
+    }
+
+    .buyButton {
+      margin-right: 2rem;
+    }
+  }
+}

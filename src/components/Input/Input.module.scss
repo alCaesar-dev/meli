@@ -1,0 +1,19 @@
+@use "../../assets/styles/variables" as *;
+
+.container {
+  display: flex;
+}
+
+.input {
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  color: $black;
+  border-radius: 0.25rem 0 0 0.25rem;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}

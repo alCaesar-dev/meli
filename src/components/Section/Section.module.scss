@@ -1,0 +1,23 @@
+@use "../../assets/styles/mixins" as *;
+
+.container {
+  @include responsive-width;
+  @media (min-width: 768px) {
+    padding-bottom: 2.5rem;
+  }
+
+  & {
+    position: relative;
+    margin: 0 auto;
+  }
+}
+
+.containerLoading {
+  flex: 1;
+}
+
+.subContainer {
+  background-color: white;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}

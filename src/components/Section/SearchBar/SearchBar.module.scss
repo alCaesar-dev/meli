@@ -1,0 +1,43 @@
+@use "../../../assets/styles/variables" as *;
+@use "../../../assets/styles/mixins" as *;
+
+.container {
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.subContainer {
+  @include responsive-width;
+
+  & {
+    gap: 1.5rem;
+    display: flex;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.searchContainer {
+  .searchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0.25rem 0.25rem 0;
+    padding: 0.5rem 0.75rem;
+    background-color: $gray-light;
+  }
+
+  .input {
+    flex: 1;
+  }
+
+  & {
+    display: flex;
+    flex: 1;
+  }
+}
