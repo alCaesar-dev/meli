@@ -2,13 +2,15 @@
 
 .item {
   display: flex;
-  align-items: start;
+  align-items: center;
   width: 100%;
   flex-direction: column;
-  gap: 1rem;
+  text-align: center;
 
   @media (min-width: 768px) {
+    align-items: start;
     flex-direction: row;
+    gap: 1rem;
   }
 
   .productLocation {
