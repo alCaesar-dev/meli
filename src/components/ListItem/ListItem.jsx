@@ -6,7 +6,7 @@ import {getCurrency} from "../../utils/string.js";
 import Image from "../Image/Image.jsx";
 
 const ListItem = ({item}) => {
-    const {id, picture, price, freeShipping, location, title} = item;
+    const {id, picture, price, free_shipping, location, title} = item;
     const navigate = useNavigate();
 
     return (
@@ -17,7 +17,7 @@ const ListItem = ({item}) => {
             <div className={styles.itemDetails}>
                 <div className={styles.priceContainer}>
                     <p className={styles.price}>{getCurrency(price.currency)} {formatNumber(price.amount)}</p>
-                    {freeShipping && (
+                    {free_shipping && (
                         <img className={styles.shippingIcon} alt="Con envío" src={truck}/>
                     )}
                 </div>
