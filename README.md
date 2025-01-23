@@ -2,6 +2,14 @@
 
 Este archivo contiene los comandos para construir, previsualizar y ejecutar tu aplicación en diferentes entornos.
 
+## 1. Instalar dependencias
+
+Antes que nada, debe instalar todas las dependencias del proyecto.
+
+```bash
+npm install
+```
+
 ## 1. Construir la aplicación para producción
 
 Para crear una versión optimizada de la aplicación para producción, ejecuta el siguiente comando:
