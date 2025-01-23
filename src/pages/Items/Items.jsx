@@ -5,6 +5,7 @@ import useItems from "../../hooks/useItems.jsx";
 import {useSearch} from "../../providers/SearchProvider.jsx";
 import Section from "../../components/Section/Section.jsx";
 import {getQueryParam} from "../../utils/url.js";
+import MetaTags from "../../components/MetaTags.jsx";
 
 const Items = () => {
     const {getAll, isLoading} = useItems();
@@ -27,6 +28,13 @@ const Items = () => {
 
     return (
         <Section
+            metaTags={
+                <MetaTags
+                    description={`Explora los resultados de tu búsqueda para ${value}. Encuentra productos únicos en nuestra plataforma.`}
+                    keywords={value}
+                    ogTitle={`Productos relaciones a ${value}`}
+                />
+            }
             categories={data.categories ?? []}
             onSearch={getData}
             isLoading={isLoading} className={styles.section}>

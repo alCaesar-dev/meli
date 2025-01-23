@@ -1,6 +1,6 @@
 import styles from './SearchBar.module.scss';
 import Input from "../../../components/Input/Input";
-import logo from "../../../assets/images/Logo_ML.png";
+import logo from "../../../assets/images/Logo_ML@2x.png.png";
 import searchIcon from "../../../assets/images/ic_Search.png";
 import {useNavigate} from "react-router";
 import {useSearch} from "../../../providers/SearchProvider.jsx";

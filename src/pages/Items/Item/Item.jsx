@@ -7,6 +7,7 @@ import {useParams} from "react-router";
 import {getCurrency} from "../../../utils/string.js";
 import {formatNumber} from "../../../utils/number.js";
 import Image from "../../../components/Image/Image.jsx";
+import MetaTags from "../../../components/MetaTags.jsx";
 
 const Item = () => {
     const [item, setItem] = useState({});
@@ -22,10 +23,18 @@ const Item = () => {
     }, []);
 
     return (
-        <Section isLoading={isLoading} className={styles.section}>
+        <Section
+            metaTags={
+                <MetaTags
+                    description={item.title}
+                    keywords={item.title}
+                    ogTitle={`${item.title} a solo ${item.price?.amount} `}
+                />
+            }
+            isLoading={isLoading}
+            className={styles.section}>
             {item.title ?
                 <div className={styles.headContainer}>
-
                     <div className={styles.imageContainer}>
                         <Image src={item.picture} alt={`Imagen de ${item.picture}`} className={styles.image}></Image>
 

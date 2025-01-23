@@ -25,11 +25,12 @@ if (!isProduction) {
     })
     app.use(vite.middlewares);
 } else {
-    const compression = (await import('compression')).default
     const sirv = (await import('sirv')).default
-    app.use(compression());
     app.use(base, sirv('./dist/client', {extensions: []}));
 }
+
+const compression = (await import('compression')).default
+app.use(compression());
 
 app.use(routes);
 
@@ -44,7 +45,7 @@ app.get('*all', async (req, res) => {
             // Lee la plantilla de desarrollo
             template = await fs.readFile('./index.html', 'utf-8');
             template = await vite.transformIndexHtml(url, template);
-            render = (await vite.ssrLoadModule('/src/EntryServer.jsx')).render;
+            render = (await vite.ssrLoadModule('./src/EntryServer.jsx')).render;
         } else {
             //
             template = templateHtml;

@@ -1,5 +1,5 @@
 import {get} from "../client.js";
-import {make, collection} from "../Resources/itemResource.js";
+import {make, collection} from "../resources/itemResource.js";
 import {errorResponse, successResponse} from "../../../responses/response.js";
 
 const getAllItems = async (req, res) => {

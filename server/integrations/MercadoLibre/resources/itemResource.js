@@ -45,6 +45,7 @@ const collection = (data) => {
             condition: item.condition,
             sold_quantity: 0,
             free_shipping: item.shipping.free_shipping,
+
         }))
     };
 }

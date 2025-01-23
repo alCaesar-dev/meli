@@ -3,9 +3,10 @@ import Categories from "./Categories/Categories.jsx";
 import SearchBar from "./SearchBar/SearchBar.jsx";
 import Spinner from "../Spinner/Spinner.jsx";
 
-const Section = ({children, categories = [], onSearch, className, isLoading = false}) => {
+const Section = ({children, categories = [], onSearch, className, metaTags, isLoading = false}) => {
     return (
         <>
+            {metaTags}
             <SearchBar onSearch={onSearch}/>
 
             {isLoading ? <Spinner/> : (

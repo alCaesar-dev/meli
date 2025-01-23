@@ -5,9 +5,11 @@ import {SearchProvider} from "./providers/SearchProvider.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Item from "./pages/Items/Item/Item.jsx";
 import {useEffect, useState} from "react";
+import * as ReactHelmet from 'react-helmet-async';
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const helmetContext = {};
 
     //Esto es por si se carga mas rapido el HTML que el CSS
     useEffect(() => {
@@ -26,24 +28,26 @@ function App() {
     }
 
     return (
-        <SearchProvider>
-            <Routes>
-                <Route
-                    path={"/"}
-                    element={<Home/>}
-                />
+        <ReactHelmet.HelmetProvider  context={helmetContext}>
+            <SearchProvider>
+                <Routes>
+                    <Route
+                        path={"/"}
+                        element={<Home/>}
+                    />
 
-                <Route
-                    path={"/items"}
-                    element={<Items/>}
-                />
+                    <Route
+                        path={"/items"}
+                        element={<Items/>}
+                    />
 
-                <Route
-                    path={"/items/:id"}
-                    element={<Item/>}
-                />
-            </Routes>
-        </SearchProvider>
+                    <Route
+                        path={"/items/:id"}
+                        element={<Item/>}
+                    />
+                </Routes>
+            </SearchProvider>
+        </ReactHelmet.HelmetProvider>
     );
 }
 
